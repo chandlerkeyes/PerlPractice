@@ -137,3 +137,45 @@ my $stringOfWords = "I am a String of Words!";
 my @wordArray = split / /, $stringOfWords;
 
 say join(" ", @wordArray);
+
+#Reversing an array
+@wordArray = reverse @wordArray;
+say join(" ", @wordArray);
+
+#Sorting an array
+@wordArray = sort @wordArray;
+say join(" ", @wordArray);
+
+#Declaring and initializing a HashMap
+my %employees = ("Sue"=> 35,
+		 "Paul"=>42,
+	 	 "Carl"=>22,
+		 "Bob"=>33);
+#We use the $ sign to call bob because Bob is an individual variable
+printf("Bob is %d \n", $employees{Bob});
+
+#Printing both key and values from a hash map with a loop
+while(my ($k, $v) = each %employees) {
+say $k, " is ", $v;
+}
+
+#Deleting key and value from HashMap
+say "NEW LINE";
+delete $employees{Sue};
+while(my ($k, $v) = each %employees) {
+say $k, " is ", $v;
+}
+
+#Creating and calling a method(sub) - Generating a random number
+sub randomNum {
+return int(rand(100));
+}
+say "Random number between 0 and 99: ", randomNum();
+
+#Methods(sub) that accept arguements
+sub getRandom {
+my ($max) = @_;
+$max ||= 100;
+return int(rand($max));
+}
+say "Random number between 0 and 10: ", getRandom(11);
