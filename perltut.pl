@@ -179,3 +179,30 @@ $max ||= 100;
 return int(rand($max));
 }
 say "Random number between 0 and 10: ", getRandom(11);
+
+#Taking in multiple values (parameters) in a subroutine
+
+sub manyNums {
+my($num1, $num2) = @_;
+$num1 ||= 1;
+$num2 ||= 1;
+
+my $addedNums = $num1 + $num2;
+
+return $addedNums;
+}
+say "Added numbers = ", manyNums(2,10);
+
+#Subroutine that takes input and puts into array
+sub myArray {
+my @enteredArray = @_;
+#Lets double the values of the array! 
+$_*= 2 for @enteredArray;
+return @enteredArray;
+}
+say "Here's a doubled array: ", join(" ", myArray(1,2,3,4,5));
+
+#Getting the length of a HashMap (Number of pairs)
+my %hash_map = ('Chandler',1999,'Bob',1980,'Sue', 1972);
+my $hash_size = keys %hash_map;
+say "Number of pairs in my HashMap is: ", $hash_size;
