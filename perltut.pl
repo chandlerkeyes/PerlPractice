@@ -206,3 +206,14 @@ say "Here's a doubled array: ", join(" ", myArray(1,2,3,4,5));
 my %hash_map = ('Chandler',1999,'Bob',1980,'Sue', 1972);
 my $hash_size = keys %hash_map;
 say "Number of pairs in my HashMap is: ", $hash_size;
+
+#Pulling specific data from hash
+my @ages_from_hash = @hash_map{'Chandler', 'Bob'};
+say "Chandler and Bob was born in ", join(" and ", @ages_from_hash);
+
+#Assigning multiple values to an array(PRACTICE)
+my @new_array = 'Chandler', 12, 1980;
+my($name, $date, $year) = @new_array;
+say $name;
+
+
